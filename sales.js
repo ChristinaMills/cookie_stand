@@ -12,17 +12,24 @@ var pdxAirport = {
     locationCookieData: function(){
         var tempArr = []
         for ( var i = 0; i < 15; i++ ) {
-       tempArr.push(Math.floor(this.totalHourlyCookies()));
+        tempArr.push(Math.floor(this.totalHourlyCookies()));
         }
-    return tempArr;
-    }
+        return tempArr;
+    },
 
     addToDom: function () { 
-        var cookieList = document.getElementById
+        var cookieList = document.getElementById( 'pdxCookie' );
+        console.log('container var is :' + cookieList)
+            for ( var i = 0; i < 15; i++ ) {
+            var newHourlyData = document.createElement( 'li' );
+            newHourlyData.innerHTML = this.locationCookieData()[i];
+            cookieList.appendChild( newHourlyData );
+            }
+        }
+    };
 
-    }
-};
 
+pdxAirport.addToDom();
 
 openHours= ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ']
 
