@@ -3,9 +3,9 @@ var pdxAirport = {
     location: 'PDX Airport',
     minCustomer: 23, 
     maxCustomer: 65,
-    avgSalePerCustomer: 6.3,
+    avgCookies: 6.3,
     temporaryArr: [],
-    totalCookies: 0,
+    totalCookies: [],
 
     getTotal: function() {
         for (var i = 0; i < 15; i++) {
@@ -18,14 +18,14 @@ var pdxAirport = {
     },
     
     avgSalePerCustomer: function() {
-        return this.calculate() * this.Avg;
+        return this.calculate() * this.avgCookies;
     },
     
     cookieData: function(){
         for ( var i = 0; i < 15; i++ ) {
         this.temporaryArr.push(Math.floor(this.avgSalePerCustomer() ) );
         }
-        console.log(temporaryArr);
+        return this.temporaryArr;
         
     },
 
