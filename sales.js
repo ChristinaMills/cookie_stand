@@ -19,6 +19,7 @@ var pdxAirport = {
     
     avgSalePerCustomer: function() {
         return this.calculate() * this.avgCookies;
+    
     },
     
     cookieData: function(){
@@ -33,7 +34,7 @@ var pdxAirport = {
         openHours= ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '];
         var listAdd = document.getElementById( 'pdxCookie' );
      
-            for ( var i = 0; i < 15; i++ ) {
+            for ( var i = 0; i < 16; i++ ) {
                 if (i < 15) {
                     var newList = document.createElement('li');
                     newList.innerHTML = (openHours[i] + this.cookieData()[i] + ' cookies');
@@ -54,3 +55,6 @@ var pdxAirport = {
 
 pdxAirport.addToDom();
 
+// var dogCat = this.calculate();
+        // var catDOg = this.avgCookies;
+        // return (dogCat*catDog);
