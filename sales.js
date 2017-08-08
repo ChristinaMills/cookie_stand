@@ -11,7 +11,7 @@ var pdxAirport = {
     calculateCookies: function() {
        for ( var i = 0; i < 15; i++ ) {
        // console.log(this.hourlyCustomers())
-       // console.log(this.avgSale)    
+         
         this.cookiesPerHour.push(Math.floor(this.hourlyCustomers() * this.avgSale))
        }
 
@@ -25,6 +25,7 @@ var pdxAirport = {
         console.log(total);
     },
     
+    function 
    
     // firstAdd: function sum(a,b){ 
     //     var total = a + b;
