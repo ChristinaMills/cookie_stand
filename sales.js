@@ -14,7 +14,7 @@ function Store(storeLocation, minCustomer, maxCustomer, avgCookies, id, openHour
 
 
 Store.prototype.calculateCust = function () {
-    return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer) + this.minCustomer);
+    return Math.floor(Math.random() * (parseInt( this.maxCustomer ) - parseInt( this.minCustomer) ) + parseInt( this.minCustomer));
 }
 
 Store.prototype.avgSalePerCustomer = function () {
@@ -51,30 +51,13 @@ Store.prototype.addToDom = function () {
         container.appendChild(newTableData);
     }
 } 
-    // this.dailyStoreTotalCalc();
-    // var tdStoreTotal = document.createElement( 'td');
-    // tdStoreTotal.setAttribute('class', 'daily-total');
-    // tdStoreTotal.innerText = this.dailyStoreTotal;
-    // container.appendChild(tdStoreTotal);
-//
 
-// function allStoreTotal () {
-//     var dailyTotalList = document.getElementsByClassName( 'daily-total');
-//     for ( var i = 0; i < 5; i++ ) {
-//         var dailyTotalIntegers = dailyTotalIntegers + dailyTotalList[i].innerHTML
-//     }
-//    console.log(dailyTotalIntegers);
-//}
-
-
-
-
-console.log(allShops)
 
 function renderHourlyTotals () {
     console.log(allShops)
     var tbody = document.getElementById("stores")
     var hourlyTotalsRow = document.createElement( 'tr' );
+    hourlyTotalsRow.id = 'total row';
 
     var hourlyHeader = document.createElement( 'th' );
     hourlyHeader.innerText = 'Hourly Totals';
@@ -98,11 +81,21 @@ function renderHourlyTotals () {
 }
 //TODO create another for loop to iterate over allShops to give allShopTOtaltotal
 
-    var pdxAirport = new Store('PDX Airport', 23, 65, 6.3, 'pdx-airport');
-    var pioneerSquare = new Store('Pioneer Square', 3, 24, 1.2, 'pioneer-square');
-    var powells = new Store('Powell\'s', 11, 38, 3.7, 'powell');
-    var stJohns = new Store('St. John\'s', 20, 38, 3.7, 'st-johns');
-    var waterfront = new Store('Waterfront', 2, 16, 4.6, 'waterfront');
+var pdxAirport = new Store('PDX Airport', 23, 65, 6.3, 'pdx-airport');
+var pioneerSquare = new Store('Pioneer Square', 3, 24, 1.2, 'pioneer-square');
+var powells = new Store('Powell\'s', 11, 38, 3.7, 'powell');
+var stJohns = new Store('St. John\'s', 20, 38, 3.7, 'st-johns');
+var waterfront = new Store('Waterfront', 2, 16, 4.6, 'waterfront');
 
 var allShops = [pdxAirport, pioneerSquare, powells, stJohns, waterfront]
 renderHourlyTotals();
+
+//TODO Build form 
+var form = document.getElementById("newStore");
+form.addEventListener( 'submit', function () {
+    event.preventDefault();
+    var something = document.getElementById('total row');
+    something.innerHTML = '';
+    var newStore = new Store( this.storeLocation.value, this.minCustomer.value, this.maxCustomer.value, this.avgCookie.value, this.storeId.value)
+renderHourlyTotals();
+});
