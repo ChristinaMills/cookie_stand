@@ -60,8 +60,8 @@ Store.prototype.addToDom = function () {
 
 function allStoreTotal () {
     var dailyTotalList = document.getElementsByClassName( 'daily-total');
-    for ( var i = 0; i < dailyTotalList.length; i++ ) {
-        var dailyTotalIntegers = dailyTotalList[i].innerHTML
+    for ( var i = 0; i < 5; i++ ) {
+        var dailyTotalIntegers = dailyTotalIntegers + dailyTotalList[i].innerHTML
     }
    console.log(dailyTotalIntegers);
 }
