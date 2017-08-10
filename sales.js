@@ -50,24 +50,59 @@ Store.prototype.addToDom = function () {
         newTableData.innerText = this.cookiesPerHour[i]; //[i]
         container.appendChild(newTableData);
     }
-    
-    this.dailyStoreTotalCalc();
-    var tdStoreTotal = document.createElement( 'td');
-    tdStoreTotal.setAttribute('class', 'daily-total');
-    tdStoreTotal.innerText = this.dailyStoreTotal;
-    container.appendChild(tdStoreTotal);
-}
+} 
+    // this.dailyStoreTotalCalc();
+    // var tdStoreTotal = document.createElement( 'td');
+    // tdStoreTotal.setAttribute('class', 'daily-total');
+    // tdStoreTotal.innerText = this.dailyStoreTotal;
+    // container.appendChild(tdStoreTotal);
+//
 
-function allStoreTotal () {
-    var dailyTotalList = document.getElementsByClassName( 'daily-total');
-    for ( var i = 0; i < 5; i++ ) {
-        var dailyTotalIntegers = dailyTotalIntegers + dailyTotalList[i].innerHTML
+// function allStoreTotal () {
+//     var dailyTotalList = document.getElementsByClassName( 'daily-total');
+//     for ( var i = 0; i < 5; i++ ) {
+//         var dailyTotalIntegers = dailyTotalIntegers + dailyTotalList[i].innerHTML
+//     }
+//    console.log(dailyTotalIntegers);
+//}
+
+
+
+
+console.log(allShops)
+
+function renderHourlyTotals () {
+    console.log(allShops)
+    var tbody = document.getElementById("stores")
+    var hourlyTotalsRow = document.createElement( 'tr' );
+
+    var hourlyHeader = document.createElement( 'th' );
+    hourlyHeader.innerText = 'Hourly Totals';
+
+    hourlyTotalsRow.appendChild( hourlyHeader );
+    tbody.appendChild( hourlyTotalsRow);
+
+    for ( var i = 0; i < 15; i++ ) { //loop over hours/columns
+        var newCell = document.createElement( 'td' );
+        var colTotal = 0
+        for ( var j = 0; j < allShops.length; j ++ ) { //loop over shop instances
+            //console.log('what shop iteration: ' allShops[j])
+            //console.log( 'thats shows cookie num at hour ' + i + ':' + allShops.cookiesPerHour[i])
+            colTotal += allShops[j].cookiesPerHour[i];
+        }
+
+        newCell.innerText = colTotal;
+        hourlyTotalsRow.appendChild( newCell );
     }
-   console.log(dailyTotalIntegers);
+
 }
+//TODO create another for loop to iterate over allShops to give allShopTOtaltotal
 
     var pdxAirport = new Store('PDX Airport', 23, 65, 6.3, 'pdx-airport');
     var pioneerSquare = new Store('Pioneer Square', 3, 24, 1.2, 'pioneer-square');
     var powells = new Store('Powell\'s', 11, 38, 3.7, 'powell');
     var stJohns = new Store('St. John\'s', 20, 38, 3.7, 'st-johns');
     var waterfront = new Store('Waterfront', 2, 16, 4.6, 'waterfront');
+
+var allShops = [pdxAirport, pioneerSquare, powells, stJohns, waterfront]
+renderHourlyTotals();
