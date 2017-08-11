@@ -43,13 +43,18 @@ Store.prototype.addToDom = function () {
     newRow.innerHTML = this.storeLocation;
     containerStore.appendChild(newRow);
     
+
     //populating the row with cookies per hr data
     var container = document.getElementById(this.id);
     for (var i = 0; i < 15; i++) {
         var newTableData = document.createElement('td');
         newTableData.innerText = this.cookiesPerHour[i]; //[i]
         container.appendChild(newTableData);
+        this.dailyStoreTotal += this.cookiesPerHour[i]; //instead of janky attribute search
     }
+    var newTotalCol = document.createElement( 'td' );
+    newTotalCol.innerHTML = this.dailyStoreTotal;
+    container.appendChild(newTotalCol);
 } 
 
 
@@ -78,6 +83,9 @@ function renderHourlyTotals () {
         hourlyTotalsRow.appendChild( newCell );
     }
 
+    var grandTotalContainer = document.createElement( 'td' );
+    grandTotalContainer.innerText = grandTotal();
+    hourlyTotalsRow.appendChild( grandTotalContainer);
 }
 //TODO create another for loop to iterate over allShops to give allShopTOtaltotal
 
@@ -88,6 +96,7 @@ var stJohns = new Store('St. John\'s', 20, 38, 3.7, 'st-johns');
 var waterfront = new Store('Waterfront', 2, 16, 4.6, 'waterfront');
 
 var allShops = [pdxAirport, pioneerSquare, powells, stJohns, waterfront]
+
 renderHourlyTotals();
 
 //TODO Build form 
@@ -99,3 +108,12 @@ form.addEventListener( 'submit', function () {
     var newStore = new Store( this.storeLocation.value, this.minCustomer.value, this.maxCustomer.value, this.avgCookie.value, this.storeId.value)
 renderHourlyTotals();
 });
+
+function grandTotal () {
+    var grandTotal = 0;
+    for (var i = 0; i < allShops.length; i++ ) {
+        grandTotal += allShops[i].dailyStoreTotal;
+    }
+    return grandTotal;
+}
+//when you add anew shop push it to your array to update
