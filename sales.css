@@ -1,0 +1,47 @@
+* {
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    
+    background-image: url("backPink.jpg");
+}
+#newStore {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1em;
+}
+
+#table, td, tr {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 2em;
+    padding-left: 5em;
+    border: solid 1px grey;
+    padding: 0.7em;
+    
+
+
+    
+}
+
+label {
+    display: block;
+    padding: 0.5em;
+    
+}
+
+input {
+    height: 1.7em;
+
+}
+
+legend {
+    font-size: 2em;
+}
