@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 1em;
+    padding: 4em 1em 1em 1em;
 }
 
 #table, td, tr {
@@ -26,8 +26,6 @@ body {
     border: solid 1px grey;
     padding: 0.7em;
     
-
-
     
 }
 

@@ -3,6 +3,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
 }
 
 #title {
@@ -20,6 +21,10 @@ nav {
     background-color: #FA8072;
 }
 
+.links {
+    padding-left: 0;
+    margin: 0;
+}
 
 li {
     z-index: 500;
@@ -29,7 +34,18 @@ li {
     font-weight: bold;
     padding: 1.5%;
     margin: 1%;
-    
+}
+
+section {
+    padding: 4em 4em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visted {
+    text-decoration: none;
 }
 
 h1 {
@@ -53,6 +69,7 @@ article {
 
 #introArticle {
     display: flex;
+    padding-bottom: 3em;
 
 }
 
@@ -65,8 +82,11 @@ article {
 
 .middleFish {
     height: 11em;
-    display: center;
-    
+}
+
+#fishContainer {
+    margin: 0 auto;
+    width: 82.5%;
 }
 
 p {
@@ -78,20 +98,32 @@ p {
 
 }
 
+#productPics {
+    margin: 0 auto;
+    width: 70%;
+    display: block;
+}
+
 #buySwag {
     font-size: 1.3em;
 }
 
 .product {
     height: 15em;
-    padding: 0.7em;
-    margin: 0.7em;
-    
 }
 
 form {
+    margin: 0 auto;
+    width: 90%;
+    padding: 3em 3em;
     border: solid 1px grey;
     padding: 5px;
+}
+
+#swagForm {
+    margin: 0 auto;
+    width: 90%;
+    margin: 3em 3em;
 }
 
 textarea {
