@@ -1,0 +1,134 @@
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+#title {
+    margin-top: 170px;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    z-index: 0;
+    position: static;
+    text-align: center;
+    background-color: #FA8072;
+}
+
+
+li {
+    z-index: 500;
+    display: inline-block;
+    font-family: 'Crushed', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 1.5%;
+    margin: 1%;
+    
+}
+
+h1 {
+    color: #4B4B4B;
+}
+
+h2 {
+    font-family: 'Crushed', cursive;
+    font-size: 2em;
+}
+
+body {
+    background-color: #ffe9c1;
+}
+
+article {
+    padding: 2%;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+#introArticle {
+    display: flex;
+
+}
+
+#salmonPicture{
+    
+    float: top;
+    margin-left: 12%;    
+    vertical-align: middle;
+}
+
+.middleFish {
+    height: 11em;
+    display: center;
+    
+}
+
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#swagQ{
+    font-size: 1.3em;
+
+}
+
+#buySwag {
+    font-size: 1.3em;
+}
+
+.product {
+    height: 15em;
+    padding: 0.7em;
+    margin: 0.7em;
+    
+}
+
+form {
+    border: solid 1px grey;
+    padding: 5px;
+}
+
+textarea {
+    width: 72%;
+    height: 10em;
+    padding: 2%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    
+    font-size: 14px;
+}
+
+#messagePrompt {
+    margin: 2%;
+    display:block;
+    font-size: 1.4em;
+}
+
+#button {
+    display: block;
+}
+
+#contact {
+    text-align: center;
+    width: 50%;
+    font-size: 16px;
+}
+
+#map {
+    margin: 5em, 3em, 0.5em, 3em;
+    padding-top: 2em;
+}
+
+#chinook {
+    width: 95%;
+    height: 15em;
+    margin-left: 2em;
+
+}
